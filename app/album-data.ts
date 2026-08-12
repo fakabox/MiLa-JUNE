@@ -47,8 +47,7 @@ export const album = {
     {
       name: "Deezer",
       icon: "deezer",
-      url: null,
-      status: "Lien en cours de mise à jour",
+      url: "https://link.deezer.com/s/345PblnOK8ZXZz2rI73wY",
     },
     {
       name: "Amazon Music",
