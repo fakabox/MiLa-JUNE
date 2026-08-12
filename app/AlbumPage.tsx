@@ -227,10 +227,16 @@ export function AlbumPage() {
                       <span aria-hidden="true">↗</span>
                     </a>
                   ) : (
-                    <span className="platform-button is-pending" key={platform.name}>
+                    <span
+                      className="platform-button is-pending"
+                      key={platform.name}
+                      aria-label={`${platform.name} : ${platform.status ?? "Lien indisponible"}`}
+                    >
                       <BrandIcon name={platform.icon} />
-                      <span>{platform.name}</span>
-                      <small>Bientôt</small>
+                      <span className="platform-label">
+                        <span>{platform.name}</span>
+                        <small>{platform.status ?? "Lien indisponible"}</small>
+                      </span>
                     </span>
                   ),
                 )}

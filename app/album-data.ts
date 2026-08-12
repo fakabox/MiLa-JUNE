@@ -2,6 +2,7 @@ export type StreamingPlatform = {
   name: string;
   icon: string;
   url: string | null;
+  status?: string;
 };
 
 export type Track = {
@@ -21,18 +22,46 @@ export const assetPath = (path: string) =>
 export const album = {
   artist: "MiLa JUNE",
   title: "Extinction",
-  releaseLabel: "Disponible le 9 août 2026",
+  releaseLabel: "Disponible maintenant",
   cover: assetPath("/extinction-album-cover.jpg"),
   socials: {
     instagram: "https://www.instagram.com/je_suis_mila_june",
     tiktok: "https://www.tiktok.com/@milajunemusic",
   },
   platforms: [
-    { name: "Spotify", icon: "spotify", url: null },
-    { name: "Apple Music", icon: "applemusic", url: null },
-    { name: "Deezer", icon: "deezer", url: null },
-    { name: "YouTube Music", icon: "youtubemusic", url: null },
-    { name: "Amazon Music", icon: "amazonmusic", url: null },
+    {
+      name: "Spotify",
+      icon: "spotify",
+      url: "https://open.spotify.com/album/2etGzM9sLZjh7A7IKcM5qb",
+    },
+    {
+      name: "Apple Music",
+      icon: "applemusic",
+      url: "https://music.apple.com/fr/album/extinction/6800429089",
+    },
+    {
+      name: "YouTube Music",
+      icon: "youtubemusic",
+      url: "https://music.youtube.com/browse/MPREb_8IUtox5W5N9",
+    },
+    {
+      name: "Deezer",
+      icon: "deezer",
+      url: null,
+      status: "Lien en cours de mise à jour",
+    },
+    {
+      name: "Amazon Music",
+      icon: "amazonmusic",
+      url: null,
+      status: "Lien en cours de mise à jour",
+    },
+    {
+      name: "TIDAL",
+      icon: "tidal",
+      url: null,
+      status: "Lien en cours de mise à jour",
+    },
   ] satisfies StreamingPlatform[],
   tracks: [
     { number: 1, title: "Je suis MiLa", preview: assetPath("/audio/01-je-suis-mila.mp3") },

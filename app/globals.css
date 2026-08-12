@@ -239,6 +239,7 @@ footer {
 .icon-deezer { --icon: url("/icons/deezer.svg"); }
 .icon-youtubemusic { --icon: url("/icons/youtubemusic.svg"); }
 .icon-amazonmusic { --icon: url("/icons/amazonmusic.svg"); }
+.icon-tidal { --icon: url("/icons/tidal.svg"); }
 .icon-facebook { --icon: url("/icons/facebook.svg"); }
 .icon-x { --icon: url("/icons/x.svg"); }
 .icon-whatsapp { --icon: url("/icons/whatsapp.svg"); }
@@ -304,16 +305,23 @@ a.platform-button:hover {
 }
 
 .platform-button small {
+  display: block;
   color: rgba(255, 250, 242, 0.5);
-  font-size: 0.66rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: 0.64rem;
+  line-height: 1.25;
 }
 
 .platform-button.is-pending {
+  grid-template-columns: 26px minmax(0, 1fr);
   color: rgba(255, 250, 242, 0.55);
   background: rgba(255, 255, 255, 0.045);
   border-color: rgba(255, 250, 242, 0.12);
+}
+
+.platform-label {
+  min-width: 0;
+  display: grid;
+  gap: 3px;
 }
 
 .platform-button.is-pending .brand-icon {
