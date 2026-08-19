@@ -287,6 +287,38 @@ export function AlbumPage() {
         </ol>
       </section>
 
+      <section className="videos-section" id="videos" aria-labelledby="videos-title">
+        <div className="videos-inner">
+          <div className="videos-heading">
+            <div>
+              <p className="eyebrow">Vidéos</p>
+              <h2 id="videos-title">MiLa JUNE en images</h2>
+            </div>
+            <a href={album.youtubeChannel} target="_blank" rel="noreferrer">
+              Voir la chaîne YouTube <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          <div className="video-strip">
+            {album.videos.map((video) => (
+              <article className="video-card" key={video.id}>
+                <div className="video-frame">
+                  <iframe
+                    src={`https://www.youtube-nocookie.com/embed/${video.id}`}
+                    title={`${album.artist} — ${video.title}`}
+                    loading="lazy"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  />
+                </div>
+                <h3>{video.title}</h3>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <footer>
         <p>{album.artist}</p>
         <p>© 2026 · Tous droits réservés</p>

@@ -11,6 +11,11 @@ export type Track = {
   preview: string | null;
 };
 
+export type Video = {
+  id: string;
+  title: string;
+};
+
 export const assetPath = (path: string) =>
   `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
 
@@ -19,6 +24,7 @@ export const assetPath = (path: string) =>
 // 2. Collez les liens Instagram et TikTok à la place de null.
 // 3. Ajoutez les extraits dans public/audio/ puis indiquez leur chemin.
 //    Exemple : preview: "/audio/01-je-suis-mila.mp3"
+// 4. Ajoutez les nouvelles vidéos YouTube dans la liste videos avec leur identifiant.
 export const album = {
   artist: "MiLa JUNE",
   title: "Extinction",
@@ -62,6 +68,12 @@ export const album = {
       status: "Lien en cours de mise à jour",
     },
   ] satisfies StreamingPlatform[],
+  youtubeChannel: "https://www.youtube.com/channel/UC59zzMS1idSZg9sqQBg0aqA",
+  videos: [
+    { id: "6EHeH5TmoE4", title: "Je suis MiLa" },
+    { id: "5LfH48F7fGg", title: "Asphalte" },
+    { id: "ByDZc5Kcp8c", title: "100 jours" },
+  ] satisfies Video[],
   tracks: [
     { number: 1, title: "Je suis MiLa", preview: assetPath("/audio/01-je-suis-mila.mp3") },
     { number: 2, title: "Le voile vert", preview: assetPath("/audio/02-le-voile-vert.mp3") },
